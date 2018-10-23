@@ -15,12 +15,12 @@
 		"screenshot": "",
 		"rubySass": false,
 		"templateLanguage": "ftl",
-		"version": "7.0"
+		"version": "7.1"
 	},
 	"devDependencies": {
 		"gulp": "^3.9.1",
 		"liferay-theme-tasks": "8.0.0-beta.5",
-		"liferay-theme-deps-7.0": "8.0.0-beta.5"
+		"liferay-theme-deps-7.1": "8.0.0-beta.5"
 	},
 	"publishConfig": {
 		"tag": "7_0_x"
