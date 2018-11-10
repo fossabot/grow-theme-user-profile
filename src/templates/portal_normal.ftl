@@ -20,7 +20,7 @@
 
 <@liferay.control_menu />
 
-<div class="container-fluid-1280" id="wrapper">
+<div class="container-fluid-1280 row" id="wrapper">
 
 	<aside class="col-md-3" id="userCard">
 		<div class="panel">
