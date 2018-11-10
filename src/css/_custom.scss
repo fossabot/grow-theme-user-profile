@@ -102,6 +102,10 @@ body {
 	padding: 0;
 }
 
+.text-default {
+	color: #6a708b;
+}
+
 h6, .h6 {
 	font-size: 16px;
 }
@@ -132,8 +136,8 @@ h6 > span {
 /* == Start styles on Activities portlet== */
 
 .activities-icon {
-    padding: 5px;
-    color: #808080;
+	padding: 5px;
+	color: #808080;
 }
 
 #p_p_id_com_liferay_owxp_subscribe_portlet_OWXPSubscribePortlet_ .portlet-content {
