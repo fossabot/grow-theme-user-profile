@@ -7,6 +7,10 @@ body {
 	background-color: $bg-color;
 }
 
+table {
+	table-layout: fixed;
+}
+
 .portlet-topper {
 	z-index: 1;
 }
