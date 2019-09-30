@@ -46,7 +46,7 @@
 				/>
 				<#assign VOID = freeMarkerPortletPreferences.reset() />
 
-				+<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
+				<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
 					<@liferay_portlet["runtime"]
 					defaultPreferences="${freeMarkerPortletPreferences}"
 					portletName="userbadgesdisplay"
