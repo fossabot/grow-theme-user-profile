@@ -39,6 +39,7 @@
 						</a>
 					</div>
 				</div>
+				
 				<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
 				<@liferay_portlet["runtime"]
 					defaultPreferences="${freeMarkerPortletPreferences}"
@@ -59,20 +60,37 @@
 
 	<section class="col-md-9" id="content">
 		<div class="panel">
-				<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
-				<@liferay_portlet["runtime"]
-					defaultPreferences="${freeMarkerPortletPreferences}"
-					portletName="com_liferay_social_activities_web_portlet_SocialActivitiesPortlet"
-				/>
-				<#assign VOID = freeMarkerPortletPreferences.reset() />
+			<div class="container tab-container">	
+				<div class="tab-wrap">
+				
+					<input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+					<label for="tab1">Activities</label>
 
-				<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
-				<@liferay_portlet["runtime"]
-					defaultPreferences="${freeMarkerPortletPreferences}"
-					portletName="userbadgelist"
-				/>
-				<#assign VOID = freeMarkerPortletPreferences.reset() />
+					<input type="radio" id="tab2" name="tabGroup1" class="tab">
+					<label for="tab2">Badge List</label>
 
+					<div class="tab__content">
+						<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
+						<@liferay_portlet["runtime"]
+							defaultPreferences="${freeMarkerPortletPreferences}"
+							portletName="com_liferay_social_activities_web_portlet_SocialActivitiesPortlet"
+						/>
+						<#assign VOID = freeMarkerPortletPreferences.reset() />
+					</div>
+
+					<div class="tab__content">
+						<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
+						<@liferay_portlet["runtime"]
+							defaultPreferences="${freeMarkerPortletPreferences}"
+							portletName="userbadgelist"
+						/>
+						<#assign VOID = freeMarkerPortletPreferences.reset() />
+					</div>
+
+				</div>
+						
+			</div>	
+			
 			<#if selectable>
 				<@liferay_util["include"] page=content_include />
 			<#else>
