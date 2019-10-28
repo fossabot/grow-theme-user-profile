@@ -2,6 +2,20 @@
 
 <#include init />
 
+<#assign
+	portlet_id = paramUtil.getString(request, "p_p_id")
+	tabActivitiesActive = ""
+	tabBadgeListActive = ""
+/>
+
+<#if (portlet_id?? && portlet_id == "userbadgelist") >
+	<#assign tabActivitiesActive = "" />
+	<#assign tabBadgeListActive = "checked" />
+<#else>
+	<#assign tabActivitiesActive = "checked" />
+	<#assign tabBadgeListActive = "" />
+</#if>
+
 <html class="${root_css_class}" dir="<@liferay.language key="lang.dir" />" lang="${w3c_language_id}">
 
 <head>
@@ -63,11 +77,11 @@
 			<div class="container tab-container">	
 				<div class="tab-wrap">
 				
-					<input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
-					<label for="tab1">Activities</label>
+					<input type="radio" id="tab-activities" name="tabGroup1" class="tab" ${tabActivitiesActive} >
+					<label for="tab-activities">Activities</label>
 
-					<input type="radio" id="tab2" name="tabGroup1" class="tab">
-					<label for="tab2">Badge List</label>
+					<input type="radio" id="tab-badgelist" name="tabGroup1" class="tab" ${tabBadgeListActive}>
+					<label for="tab-badgelist">Badge List</label>
 
 					<div class="tab__content">
 						<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
