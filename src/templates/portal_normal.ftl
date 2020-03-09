@@ -54,19 +54,16 @@
 					</div>
 				</div>
 				
-				<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
+				<#assign freeMarkerPortletPreferencesMap = {"portletSetupPortletDecoratorId": "barebone"} />
 				<@liferay_portlet["runtime"]
-					defaultPreferences="${freeMarkerPortletPreferences}"
+					defaultPreferences=freeMarkerPortletPreferences.getPreferences(freeMarkerPortletPreferencesMap)
 					portletName="com_liferay_owxp_subscribe_portlet_OWXPSubscribePortlet"
 				/>
-				<#assign VOID = freeMarkerPortletPreferences.reset() />
 
-				<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
-					<@liferay_portlet["runtime"]
-					defaultPreferences="${freeMarkerPortletPreferences}"
+				<@liferay_portlet["runtime"]
+					defaultPreferences=freeMarkerPortletPreferences.getPreferences(freeMarkerPortletPreferencesMap)
 					portletName="userbadgesdisplay"
 				/>
-				<#assign VOID = freeMarkerPortletPreferences.reset() />
 			</#if>
 
 		</div>
@@ -84,21 +81,18 @@
 					<label for="tab-badgelist">Badge List</label>
 
 					<div class="tab__content">
-						<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
+						<#assign freeMarkerPortletPreferencesMap2 = {"portletSetupPortletDecoratorId" : "barebone"} />
 						<@liferay_portlet["runtime"]
-							defaultPreferences="${freeMarkerPortletPreferences}"
+							defaultPreferences=freeMarkerPortletPreferences.getPreferences(freeMarkerPortletPreferencesMap2)
 							portletName="com_liferay_social_activities_web_portlet_SocialActivitiesPortlet"
 						/>
-						<#assign VOID = freeMarkerPortletPreferences.reset() />
 					</div>
 
 					<div class="tab__content">
-						<#assign VOID = freeMarkerPortletPreferences.setValue("portletSetupPortletDecoratorId", "barebone") />
 						<@liferay_portlet["runtime"]
-							defaultPreferences="${freeMarkerPortletPreferences}"
+							defaultPreferences=freeMarkerPortletPreferences.getPreferences(freeMarkerPortletPreferencesMap2)
 							portletName="userbadgelist"
 						/>
-						<#assign VOID = freeMarkerPortletPreferences.reset() />
 					</div>
 
 				</div>
